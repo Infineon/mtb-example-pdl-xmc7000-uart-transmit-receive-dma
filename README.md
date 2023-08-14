@@ -4,7 +4,7 @@ This code example demonstrates the UART transmit and receive operation in XMC700
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-pdl-xmc7000-uart-transmit-receive-dma)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4NTkiLCJTcGVjIE51bWJlciI6IjAwMi0zMzg1OSIsIkRvYyBUaXRsZSI6IlhNQzcwMDAgTUNVOiBVQVJUIHRyYW5zbWl0IHJlY2VpdmUgd2l0aCBETUEiLCJyaWQiOiJoYXhpIiwiRG9jIHZlcnNpb24iOiIxLjEuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4NTkiLCJTcGVjIE51bWJlciI6IjAwMi0zMzg1OSIsIkRvYyBUaXRsZSI6IlhNQzcwMDAgTUNVOiBVQVJUIHRyYW5zbWl0IHJlY2VpdmUgd2l0aCBETUEiLCJyaWQiOiJoYXhpIiwiRG9jIHZlcnNpb24iOiIxLjIuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 ## Requirements
 
@@ -24,6 +24,7 @@ This code example demonstrates the UART transmit and receive operation in XMC700
 
 - [XMC7200 evaluation kit](https://www.infineon.com/KIT_XMC72_EVK) (`KIT_XMC72_EVK`) - Default value of `TARGET`
 - [TRAVEO™ T2G body high evaluation kit](https://www.infineon.com/KIT_T2G-B-H_EVK) (`KIT_T2G-B-H_EVK`)
+- [TRAVEO™ T2G body high evaluation kit](https://www.infineon.com/KIT_T2G-B-H_LITE) (`KIT_T2G-B-H_LITE`)
 
 ## Hardware setup
 
@@ -224,6 +225,7 @@ Document title: *CE233859* – *XMC7000 MCU: UART transmit receive with DMA*
 | ------- | --------------------- |
 | 1.0.0   | New code example with ModusToolbox&trade; 3.0     |
 | 1.1.0   | Added support for KIT_T2G-B-H_EVK     |
+| 1.2.0   | Added support for KIT_T2G-B-H_LITE    |
 <br />
 
 ---------------------------------------------------------
