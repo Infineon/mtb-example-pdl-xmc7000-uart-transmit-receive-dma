@@ -39,6 +39,7 @@
 * of such system or application assumes all risk of such use and in doing
 * so agrees to indemnify Cypress against all liability.
 *******************************************************************************/
+
 #include "cy_pdl.h"
 #include "cybsp.h"
 #include "UartDma.h"
@@ -50,6 +51,7 @@
 /*******************************************************************************
 *            Global variables
 *******************************************************************************/
+
 uint8_t rx_dma_error;   /* RxDma error flag */
 uint8_t tx_dma_error;   /* TxDma error flag */
 uint8_t uart_error;     /* UART error flag */
@@ -58,6 +60,7 @@ uint8_t rx_dma_done;    /* RxDma done flag */
 /*******************************************************************************
 *            Forward declaration
 *******************************************************************************/
+
 void handle_error(void);
 void Isr_UART(void);
 
@@ -80,6 +83,7 @@ void Isr_UART(void);
 *  int
 *
 *******************************************************************************/
+
 int main(void)
 {
     cy_rslt_t result;
