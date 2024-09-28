@@ -4,11 +4,11 @@ This code example demonstrates the UART transmit and receive operation in XMC700
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-pdl-xmc7000-uart-transmit-receive-dma)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4NTkiLCJTcGVjIE51bWJlciI6IjAwMi0zMzg1OSIsIkRvYyBUaXRsZSI6IlhNQzcwMDAgTUNVOiBVQVJUIHRyYW5zbWl0IHJlY2VpdmUgd2l0aCBETUEiLCJyaWQiOiJoYXhpIiwiRG9jIHZlcnNpb24iOiIyLjEuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzM4NTkiLCJTcGVjIE51bWJlciI6IjAwMi0zMzg1OSIsIkRvYyBUaXRsZSI6IlhNQzcwMDAgTUNVOiBVQVJUIHRyYW5zbWl0IHJlY2VpdmUgd2l0aCBETUEiLCJyaWQiOiJoYXhpIiwiRG9jIHZlcnNpb24iOiIyLjEuMSIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.1 or later (tested with v3.1)
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.1 or later (tested with v3.2)
 - Programming language: C
 - Associated parts: [XMC7000 MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-industrial-microcontroller-based-on-arm-cortex-m/), [TRAVEO&trade; T2G body high MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/)
 
@@ -16,8 +16,8 @@ This code example demonstrates the UART transmit and receive operation in XMC700
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
 - GNU Arm&reg; Embedded Compiler v11.3.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
-- Arm&reg; Compiler v6.16 (`ARM`)
-- IAR C/C++ Compiler v9.30.1 (`IAR`)
+- Arm&reg; Compiler v6.22 (`ARM`)
+- IAR C/C++ Compiler v9.50.2 (`IAR`)
 
 
 ## Supported kits (make variable 'TARGET')
@@ -268,6 +268,8 @@ Document title: *CE233859* – *XMC7000 MCU: UART transmit receive with DMA*
 | 1.3.0   | Updated for clock setting of KIT_XMC72_EVK    |
 | 2.0.0   | Updated to support ModusToolbox&trade; v3.1 and added support for KIT_XMC71_EVK_LITE_V1 |
 | 2.1.0   | Added support for KIT_XMC72_EVK_MUR_43439M2 |
+| 2.1.1   | Disabled D-cache for XMC7000 based BSPs
+|
 <br />
 
 All referenced product or service names and trademarks are the property of their respective owners.
