@@ -99,6 +99,10 @@ void configure_rx_dma(uint8_t* buffer_a, uint8_t* buffer_b, cy_stc_sysint_t* int
     Cy_DMA_Descriptor_SetSrcAddress(&RxDma_Descriptor_1, (uint32_t *) &KIT_UART_HW->RX_FIFO_RD);
     Cy_DMA_Descriptor_SetDstAddress(&RxDma_Descriptor_1, (uint32_t *) buffer_b);
 
+    SCB_CleanDCache_by_Addr((uint32_t*)&KIT_UART_HW->RX_FIFO_RD, (int32_t)sizeof(KIT_UART_HW->RX_FIFO_RD));
+    SCB_CleanDCache_by_Addr((uint32_t*)&RxDma_Descriptor_0, (int32_t)sizeof(RxDma_Descriptor_0));
+    SCB_CleanDCache_by_Addr((uint32_t*)&RxDma_Descriptor_1, (int32_t)sizeof(RxDma_Descriptor_1));
+
     Cy_DMA_Channel_SetDescriptor(RxDma_HW, RxDma_CHANNEL, &RxDma_Descriptor_0);
 
     /* Initialize and enable interrupt from RxDma */
@@ -146,6 +150,9 @@ void configure_tx_dma(uint8_t* buffer_a, cy_stc_sysint_t* int_config)
     /* Set source and destination for descriptor 1 */
     Cy_DMA_Descriptor_SetSrcAddress(&TxDma_Descriptor_0, (uint32_t *) buffer_a);
     Cy_DMA_Descriptor_SetDstAddress(&TxDma_Descriptor_0, (uint32_t *) &KIT_UART_HW->TX_FIFO_WR);
+
+    SCB_CleanDCache_by_Addr((uint32_t*)&KIT_UART_HW->TX_FIFO_WR, (int32_t)sizeof(KIT_UART_HW->TX_FIFO_WR));
+    SCB_CleanDCache_by_Addr((uint32_t*)&TxDma_Descriptor_0, (int32_t)sizeof(TxDma_Descriptor_0));
 
     /* Set next descriptor to NULL to stop the chain execution after descriptor 1
     *  is completed.

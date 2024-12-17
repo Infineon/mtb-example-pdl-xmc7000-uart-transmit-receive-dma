@@ -57,6 +57,9 @@ uint8_t tx_dma_error;   /* TxDma error flag */
 uint8_t uart_error;     /* UART error flag */
 uint8_t rx_dma_done;    /* RxDma done flag */
 
+CY_SECTION_SHAREDMEM uint8_t rx_dma_uart_buffer_a[BUFFER_SIZE];
+CY_SECTION_SHAREDMEM uint8_t rx_dma_uart_buffer_b[BUFFER_SIZE];
+
 /*******************************************************************************
 *            Forward declaration
 *******************************************************************************/
@@ -87,8 +90,6 @@ void Isr_UART(void);
 int main(void)
 {
     cy_rslt_t result;
-    uint8_t rx_dma_uart_buffer_a[BUFFER_SIZE];
-    uint8_t rx_dma_uart_buffer_b[BUFFER_SIZE];
     cy_en_scb_uart_status_t init_status;
     cy_stc_scb_uart_context_t KIT_UART_context;
     uint32_t active_descr = DMA_DESCR0; /* flag to control which descriptor to use */
@@ -150,8 +151,6 @@ int main(void)
     uart_error = 0;
     rx_dma_done = 0;
 
-    /* Disable D cache because DMA also reads descriptor in the SRAM */
-    SCB_DisableDCache();
     __enable_irq();
  
     while (1)
@@ -179,6 +178,8 @@ int main(void)
                 Cy_DMA_Descriptor_SetSrcAddress(&TxDma_Descriptor_0, (uint32_t *) rx_dma_uart_buffer_b);
                 active_descr = DMA_DESCR0;
             }
+
+            SCB_CleanDCache_by_Addr((uint32_t*)&TxDma_Descriptor_0, (int32_t)sizeof(TxDma_Descriptor_0));
 
             Cy_DMA_Channel_SetDescriptor(TxDma_HW, TxDma_CHANNEL, &TxDma_Descriptor_0);
             Cy_DMA_Channel_Enable(TxDma_HW, TxDma_CHANNEL);
